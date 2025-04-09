@@ -1,0 +1,29 @@
+---
+title: "Untitled"
+format: 
+  html:
+    toc: true
+    number-sections: true
+editor: source
+---
+
+# titulo principal
+
+## subseção
+
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto.
+
+texto texto texto texto texto texto texto texto texto texto texto texto texto
+texto texto texto texto texto texto texto texto texto texto texto texto texto.
+
+*expressão em italico*,**expressão em negrito**,
+
+## 1.2criando uma lista não ordenada
+
+
+_item 1
+_item 2
+
+-subitem 1
+_subitem 2
