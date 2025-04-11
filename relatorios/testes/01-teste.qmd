@@ -19,11 +19,48 @@ texto texto texto texto texto texto texto texto texto texto texto texto texto.
 
 *expressão em italico*,**expressão em negrito**,
 
-## 1.2criando uma lista não ordenada
+## criando uma lista não ordenada
 
 
 _item 1
 _item 2
 
--subitem 1
-_subitem 2
+   -subitem 1
+   _subitem 2
+   
+   
+##criando uma lista ordenda
+1. item 1
+2. item 2
+3. item 3
+
+## inserindo 1link para paginas da web
+
+
+## escrevendo matematica 
+
+integral:
+
+
+## celulas de codigo 
+
+para inserir uma celula de codigo R em um arquivo quarto, podemos usar o 
+atalho ctrl+alt+i :
+
+```{r}
+# simulando uma VA com distribuição normal padrão
+x <- rnorm(1000)
+
+#grafico de linha da variavel simulada
+plot (x,type = "1")
+```
+
+
+
+
+
+
+
+
+
+
