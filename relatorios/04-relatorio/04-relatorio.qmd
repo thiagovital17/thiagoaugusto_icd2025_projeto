@@ -233,6 +233,10 @@ Mostrando que o gapminder já está no formato tidy:
 head(gapminder)
 ```
 
+```{r}
+#exibe as seis ultimas linhas do objeto gapminder
+tail(gapminder, 10)
+```
 
 
 
@@ -414,7 +418,8 @@ a expectativa de vida:
 
 ```{r}
 dados_expectativa <- gapminder %>%
-  select(___, ___, ___)
+  select(country,year,lifeExp)
+head(dados_expectativa)
 ```
 
 
