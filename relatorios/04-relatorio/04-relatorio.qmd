@@ -20,6 +20,9 @@ execute:
 #| label: setup
 #| echo: false
 
+#opçoes para exibição de numeros
+ options(digits = 5, scipen = 999)
+
 # Carrega os pacotes necessários
 library(tidyverse) # Inclui o dplyr e outros 8 pacotes
 library(gapminder) # Conjunto de dados para os exemplos
@@ -826,7 +829,7 @@ paises_classificados <- gapminder %>%
   filter(year == 2007) %>%
   mutate(
     classe_desenvolvimento = case_when(
-      gdpPercap < 2000 ~ "Baixo",
+      gdpPercap < 2000 ~ "Baixa",
       gdpPercap < 10000 ~ "Médio",
       gdpPercap >= 10000 ~ "Alto"
     )
@@ -854,15 +857,19 @@ a população para milhões:
 
 ```{r}
 gapminder %>%
-  mutate(pop_em_milhoes = ___)
+  mutate(pop_em_milhoes = pop/1000000)
+gapminder %>%
+  mutate(receita_total=gdpPercap*pop)
 ```
 
 
 2. Crie uma nova variável que calcule o "PIB total" 
 (PIB per capita × população) para cada país.
 
+
 ```{r}
-# seu codigo aqui
+gapminder %>%
+  mutate(receita_total=gdpPercap*pop)
 ```
 
 
@@ -874,7 +881,15 @@ seja "Sim" quando a população for maior que 50 milhões e "Não"
 caso contrário.
 
 ```{r}
-# seu codigo aqui
+gapminder %>%
+  mutate(
+    receita_total=gdpPercap*pop,
+    categoria_receita=case_when(
+      receita_total<1e10 ~ "baixa",
+      receita_total>=1e10& receita_total<5e11 ~ "media",
+      receita_total>=5e11 ~ "alta"
+    )
+  )
 ```
 
 
