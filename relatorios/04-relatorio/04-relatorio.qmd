@@ -994,15 +994,19 @@ vida por continente:
 
 ```{r}
 expectativa_por_continente <- gapminder %>%
-  group_by(___) %>%
-  summarize(expectativa_media = ___(___))
+  group_by(continent) %>%
+  summarize(expectativa_media = mean(lifeExp))
 ```
 
 
 2. Calcule a população total por continente no ano de 2007.
 
 ```{r}
-# seu codigo aqui
+populacao_total <- gapminder %>%
+  filter(year==2007) %>%
+  group_by(continent) %>%
+  summarise(populacao_total= sum(pop))
+  
 ```
 
 
@@ -1077,14 +1081,14 @@ de vida (do maior para o menor):
 ```{r}
 paises_ordenados <- gapminder %>%
   filter(year == 2007) %>%
-  arrange(___(___))
+  arrange(desc(lifeExp))
 ```
 
 
 2. Escreva um código para listar os 5 países com menor PIB per capita em 2007.
 
 ```{r}
-# seu codigo aqui
+
 ```
 
 
