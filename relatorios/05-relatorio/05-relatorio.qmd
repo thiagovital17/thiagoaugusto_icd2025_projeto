@@ -53,7 +53,7 @@ relatorio_expectativa <- gapminder %>%
   arrange(desc(expectativa_media))
 
 # Visualiza o resultado final
-relatorio_expectativa
+knitr::kable(relatorio_expectativa)
 ```
 
 
@@ -364,7 +364,8 @@ Transforme estes dados para o formato "longo" (tidy), criando as variáveis
 ## Solução do Exercício 1
 
 ```{r}
-# seu código aqui
+# 
+  )
 ```
 
 
@@ -403,7 +404,12 @@ Transforme estes dados para o formato adequado para estas análises.
 ## Solução do Exercício 2
 
 ```{r}
-# seu código aqui
+ investimentos_marketing_longo <- investimentos_marketing%>%
+  pivot_longer(
+    cols = c(jan,fev,mar
+    names_to = "mes",
+    values_to = "investimento"
+  )
 ```
 
 
