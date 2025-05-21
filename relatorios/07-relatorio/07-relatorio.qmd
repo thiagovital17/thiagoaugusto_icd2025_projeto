@@ -116,14 +116,48 @@ clientes
 ## Dados de Exemplo para Aula
 
 ```{r}
+# Cria a tabela de produtos
+produtos <- tribble(
+  ~codigo_produto, ~nome_produto,      ~preco_unitario, ~categoria,
+  "P001",         "Notebook Pro",      4500,           "Eletrônicos",
+  "P002",         "Smartphone X",      2800,           "Eletrônicos",
+  "P003",         "Monitor 24pol",     1200,           "Informática",
+  "P004",         "Mouse Gamer",       250,            "Informática",
+  "P005",         "Cadeira Ergonômica", 950,           "Mobiliário"
+)
+
+# exibe a tabela
 produtos
+
 ```
 
 ```{r}
+# Cria a tabela de vendas
+vendas <- tribble(
+  ~id_venda, ~codigo_produto, ~id_cliente, ~data_venda,  ~quantidade,
+  1,         "P001",          "C001",      "2025-04-15", 1,
+  2,         "P002",          "C002",      "2025-04-16", 2,
+  3,         "P003",          "C001",      "2025-04-18", 2,
+  4,         "P002",          "C003",      "2025-04-20", 1,
+  5,         "P006",          "C002",      "2025-04-22", 3,
+  6,         "P004",          "C004",      "2025-04-23", 4
+)
+
+# exibe a tabela
 vendas
 ```
 
 ```{r}
+# Crian a tabela de clientes 
+clientes <- tribble(
+  ~id_cliente, ~nome_cliente,     ~cidade,
+  "C001",      "Empresa Alpha",   "São Paulo",
+  "C002",      "Empresa Beta",    "Rio de Janeiro",
+  "C003",      "João Silva",      "Belo Horizonte",
+  "C005",      "Maria Oliveira",  "Recife"
+)
+
+# exibe a tabela
 clientes
 ```
 
@@ -309,13 +343,16 @@ Identifique o join mais adequado para cada cenário
 Para cada situação abaixo, identifique qual tipo de join seria mais 
 apropriado: **left_join**, **inner_join**, **full_join** ou **right_join**: 
 
-1. 
+1.left_join(vendas =>produtos) mantem as vendas sem correspondencia na tabela
+de produtos.
 
-2. 
+2. right_join(vendas =>produtos) ou left_join(produtos=>vendas) mantem todos 
+os produtos, mesmo sem vendas
 
-3. 
+3.full_join mantem todos os registros de ambas as tabelas para uma analise 
+completa
 
-4. 
+4.inner_join.mantem apenas registros com correspondencia em todas as tabelas
 
 **Dica**: Pense em quais tabelas são "obrigatórias" e quais são "opcionais" 
 em cada cenário!
@@ -339,7 +376,7 @@ Complete o código:
 ```{r}
 lista_vendas_produtos <- vendas %>%
   # 1. Escolha o tipo de join adequado para manter todas as vendas
-  ___(produtos, by = "codigo_produto") %>%
+  left_join(produtos, by = "codigo_produto") %>%
   # 2. Selecione apenas as colunas importantes
   select(
     id_venda, 
@@ -348,7 +385,7 @@ lista_vendas_produtos <- vendas %>%
     quantidade
   ) %>%
   # 3. Ordene por data da venda
-  arrange(___)
+  arrange(data_venda)
 ```
 
 **Dica**: Pense em qual tipo de join deve usar. Você quer manter todas as 
@@ -376,7 +413,7 @@ Complete o código:
 # Complete o código
 relatorio_clientes <- clientes %>%
   # 1. Escolha o tipo de join adequado para manter todos os clientes
-  ___(vendas, by = "id_cliente") %>%
+  left_join(vendas, by = "id_cliente") %>%
   # 2. Selecione apenas as colunas importantes
   select(
     id_cliente,
@@ -386,7 +423,7 @@ relatorio_clientes <- clientes %>%
     data_venda
   ) %>%
   # 3. Ordene por nome do cliente
-  arrange(___)
+  arrange(nome_cliente)
 ```
 
 **Dica**: Como queremos manter todos os clientes, mesmo os que não 
@@ -409,9 +446,9 @@ Complete o código:
 ```{r}
 relatorio_financeiro <- vendas %>%
   # Combine vendas com produtos usando left_join
-  left_join(produtos, by = "___") %>%
+  left_join(produtos, by = "codigo_produto") %>%
   # Calcule o valor total da venda
-  mutate(valor_total = ___) %>%
+  mutate(valor_total =quantidade*preco_unitario) %>%
   # Selecione apenas as colunas relevantes para o relatório
   select(
     id_venda, 
@@ -423,7 +460,7 @@ relatorio_financeiro <- vendas %>%
     valor_total
   ) %>%
   # Ordene do maior valor total para o menor
-  arrange(___)
+  arrange(desc(valor_total))
 ```
 
 **Perguntas para reflexão:** 
