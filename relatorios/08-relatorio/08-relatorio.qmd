@@ -191,21 +191,21 @@ descrita, classifique-a como **discreta** ou **contínua**:
 1. O número mensal de cancelamentos de assinaturas em uma plataforma 
 de streaming
 
-**Resposta:** 
+**Resposta:** discreta
 
 2. O tempo de entrega (em horas) para pedidos online de uma loja de 
 e-commerce
 
-**Resposta:** 
+**Resposta:** continua
 
 3. A variação percentual diária no preço das ações de uma empresa
 
-**Resposta:** 
+**Resposta:** continua
 
 4. O número de unidades vendidas de um novo produto no primeiro mês 
 após seu lançamento
 
-**Resposta:** 
+**Resposta:** discreta
 
 
 
@@ -227,7 +227,7 @@ descubra seu *ticker* (símbolo da ação)
 
 
 ```{r}
-# seu código aqui
+# 1)vale3.sa
 ```
 
 
