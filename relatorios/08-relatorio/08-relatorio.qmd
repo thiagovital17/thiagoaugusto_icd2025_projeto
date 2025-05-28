@@ -2,7 +2,7 @@
 title: "Organização de Dados com o Pacote tidyr"
 subtitle: "Fundamentos de Probabilidade para Decisões - Parte 1"
 lang: pt-BR
-author: "Seu Nome"
+author: "thiago"
 date: 2025-05-21
 format: 
   html:
@@ -229,8 +229,6 @@ descubra seu *ticker* (símbolo da ação)
 ```{r}
 # 1)vale3.sa
 ```
-
-
 
 
 # Distribuições de Probabilidade Teóricas

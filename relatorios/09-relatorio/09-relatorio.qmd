@@ -2,7 +2,7 @@
 title: "Fundamentos de Probabilidade para Decisões - Parte 1"
 subtitle: "Distribuição Normal e Valor Esperado"
 lang: pt-BR
-author: "Seu Nome"
+author: "thiago"
 date: 2025-05-23
 format: 
   html:
@@ -149,7 +149,7 @@ Agora vamos simular a distribuição normal padronizada:
 
 ```{r}
 set.seed(123)
-z_simulada <- rnorm(1000, mean = 0, sd = 1)
+z_simulada <- rnorm(10000, mean = 0, sd = 1)
 head(z_simulada)
 ```
 
@@ -413,21 +413,21 @@ de 3% ($R \sim N(\mu = 0.01, \sigma = 0.03)$).
    Ou seja, encontre $P(R < -0.04)$.
 
 ```{r}
-# seu código aqui
+ pnorm(-0,04,mean=0.01,sd=0.03)
 ```
 
 2. Qual a probabilidade de obter um retorno positivo no próximo mês? 
    Ou seja, encontre $P(R > 0)$.
 
 ```{r}
-# seu código aqui
+1-pnorm(0)
 ```
  
 3. Qual a probabilidade de obter um retorno superior a 5%? 
    Ou seja, encontre $P(R > 0.05)$.
 
 ```{r}
-# seu código aqui
+1-pmorm(0,05)
 ```
 
 
@@ -443,21 +443,21 @@ normal com média de R$ 12.000 e desvio-padrão de R$ 2.500
    Ou seja, encontre $P(V > 15000)$.
 
 ```{r}
-# seu código aqui
+1-pnorm(15000,mean = 12000,sd=2500)
 ```
 
 2. Para garantir estoque em 95% dos dias, qual deveria ser o valor 
 mínimo de vendas para preparação? Encontre $y$ tal que $P(V < y) = 0.95$.
 
 ```{r}
-# seu código aqui
+pnorm(0.95,mean = 12000,sd=2500)
 ```
 
 3. Qual o valor mínimo de vendas esperado com 90% de probabilidade? 
    Encontre $x$ tal que $P(V > x) = 0.90$.
 
 ```{r}
-# seu código aqui
+qnorm(0,1,mean=12000,sd=2500)
 ```
 
 
