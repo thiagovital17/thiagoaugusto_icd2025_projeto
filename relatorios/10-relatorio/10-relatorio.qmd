@@ -2,7 +2,7 @@
 title: "Fundamentos de Probabilidade para Decisões - Parte 2"
 subtitle: "Características da Distribuição de Probabilidade de Variáveis Aleatórias"
 lang: pt-BR
-author: "Seu Nome"
+author: "thiago"
 date: 2025-05-28
 format: 
   html:
