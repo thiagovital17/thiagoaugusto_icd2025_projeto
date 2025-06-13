@@ -2,7 +2,7 @@
 title: "Análise Exploratória de Dados"
 subtitle: "Análise Exploratória Gráfica - Parte 2"
 lang: pt-BR
-author: "Seu Nome"
+author: "Thiago"
 date: 2025-06-11
 format: 
   html:
