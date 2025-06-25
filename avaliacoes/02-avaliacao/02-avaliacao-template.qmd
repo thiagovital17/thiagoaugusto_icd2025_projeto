@@ -1,0 +1,272 @@
+---
+title: "Avaliação 2 - Valor: 33 pontos"
+subtitle: "Introdução à Ciência de Dados - 2025 <br> Bacharelado em Administração"
+author:   
+  - Membro 1   
+  - Membro 2
+  - Membro 3
+title-block-banner: "#27445C"
+format:
+  html:
+    embed-resources: true
+    page-layout: article
+    toc: true
+    toc-location: left
+lang: "pt"
+date: 2025-06-18
+date-format: long
+execute:
+  echo: true
+  warning: false
+  message: false
+---
+
+
+```{r}
+#| label: setup
+#| echo: false
+
+# pacotes utilizados
+library(here)
+library(tidyverse)
+library(tidyquant)
+library(effectsize)
+```
+
+
+
+## Questão 1
+
+**a)**
+
+```{r}
+# insira o código aqui
+```
+
+
+**b)**
+
+```{r}
+# insira o código aqui
+```
+
+
+**c)** 
+
+Simulação dos custos médios com 10 residências seguradas:
+
+```{r}
+## fixa a semente para reprodutibilidade
+set.seed(2025)
+
+## simula o custo para 10 residências seguradas
+custos_10 <- sample(
+  c(____, ____),        # preencha com os dois valores de custos possíveis: sem sinistro e com sinistro
+  size = ____,          # número total de residências a serem simuladas
+  replace = ____,       # indique se a amostragem será com reposição
+  prob = c(____, ____)  # probabilidades de cada um dos dois resultados (sinistro e não sinistro)
+  ) 
+
+## estimativa do custo médio por apólice com 10 residências seguradas
+____(custos_10)         # função para calcular a média do vetor simulado
+```
+
+
+Simulação dos custos médios com 100 residências seguradas:
+
+```{r}
+# insira o código aqui
+```
+
+
+Simulação dos custos médios com 1000 residências seguradas:
+
+```{r}
+# insira o código aqui
+```
+
+
+**d)**
+
+
+
+
+**e)**
+
+
+
+
+
+## Questão 2
+
+**a)** 
+
+```{r}
+# insira o código aqui
+```
+
+
+**b)** 
+
+```{r}
+# insira o código aqui
+```
+
+
+**c)** 
+
+```{r}
+# insira o código aqui
+```
+
+
+
+
+
+## Questão 3
+
+
+**a)** 
+
+```{r}
+# insira o código aqui
+```
+
+Reposta:
+
+
+**b)** 
+
+```{r}
+# insira o código aqui
+```
+
+
+Reposta:
+
+
+**c)**
+
+
+
+**d)** 
+
+
+
+
+
+## Questão 4
+
+**a)**
+
+```{r}
+# insira o código aqui
+```
+
+Cálculo do VaR 99% percentual:
+
+```{r}
+# insira o código aqui
+```
+
+Cálculo do VaR 99% monetário (valor absoluto da perda):
+
+```{r}
+# insira o código aqui
+```
+
+
+
+**b)**
+
+
+
+**c)**
+
+
+
+
+
+## Questão 5
+
+- [ ] A 
+
+- [ ] B 
+
+- [ ] C 
+
+- [ ] D 
+
+- [ ] E 
+
+
+Por que as demais estão erradas?
+
+- **Letra** - 
+  
+- **Letra** - 
+  
+- **Letra** - 
+  
+- **Letra** - 
+
+
+
+
+
+## Questão 6
+
+
+**a)** 
+
+
+```{r}
+# insira o código aqui
+```
+
+
+**b.1)** 
+   
+```{r}
+# cálculo dos retornos logarítmicos
+dados_ret <- dados_precos %>% 
+# a função `mutate()` adiciona as colunas de retornos
+mutate(ret_petrobras = log(petrobras / lag(petrobras)),
+     ret_weg       = log(weg       / lag(weg))) %>% 
+# drop_na remove a linha com retorno faltante (NA)
+drop_na()
+
+# exibição das primeiras linhas
+head(dados_ret)
+```
+
+
+
+**b.2)** 
+
+```{r}
+# insira o código aqui
+```
+
+
+**b.3)** 
+
+```{r}
+# insira o código aqui
+```
+
+**Interpretação:**
+
+
+
+**c)** 
+
+```{r}
+# insira o código aqui
+```
+
+
+**Interpretação:**
+
+
+**d)** 
