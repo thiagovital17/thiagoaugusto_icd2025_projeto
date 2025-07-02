@@ -442,7 +442,18 @@ dados_recentes <- pnud_muni %>%
 glimpse(dados_recentes)
 ```
 
+extraindo uma amostra aleatoria simples com funçao slice_sample
+```{r}
+#fixa a semente para reprodutibilidade
+set.seed(234)
 
+#extrai AAS dos municipios
+amostra_aleatoria_simples <- dados_recentes %>%
+  slice_sample(n=150) %>%
+  select()
+
+#exibe a amostra
+amostra_aleatoria_simples
 
 
 
