@@ -2,7 +2,7 @@
 title: "Introdução à Ciência de Dados"
 subtitle: "Introdução à Inferência Estatística- Parte 2"
 lang: pt-BR
-author: "Seu Nome"
+author: "thiago"
 date: 2025-07-02
 format: 
   html:
